@@ -15,8 +15,10 @@ higbee_arc = 20;
 thread(type, turns, higbee_arc=higbee_arc);
 
 specs = thread_specs(type);
-P = specs[0]; Rrot = specs[1]; Dsupport = specs[2];
+P = specs[0];
+Rrot = specs[1];
+Dsupport = specs[2];
 section_profile = specs[3];
 H = (turns + 1) * P;
 translate([0, 0, -P / 2])
-    cylinder(h=H, d=Dsupport, $fn=120);
+  cylinder(h=H, d=Dsupport, $fn=120);
