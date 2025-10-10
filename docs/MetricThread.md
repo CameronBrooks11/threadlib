@@ -2,13 +2,13 @@
 
 ![Metric thread specs](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/ISO_and_UTS_Thread_Dimensions.svg/2560px-ISO_and_UTS_Thread_Dimensions.svg.png)
 
-metric_thread.csv provides the numbers given in the norm (no thinking done there, just copying). metric_thread.awk - as usual - calculates the threadlib specs. 
+metric_thread.csv provides the numbers given in the norm (no thinking done there, just copying). metric_thread.awk—as usual—calculates the threadlib specs.
 
-- Designator: use the simplified variant
+- Designator: Use the simplified variant
 - Pitch diameters: Choose the center of the tolerance range
-- Support diameters: Center of tol. range
-- Valley diameter: Border of tol. range so that overlap with support is assured
-- Crest diameters: Center of tol. range
+- Support diameters: Center of tolerance range
+- Valley diameter: Border of tolerance range so that overlap with support is assured
+- Crest diameters: Center of tolerance range
 
 ## Specialties
 

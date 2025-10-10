@@ -2,7 +2,6 @@
 
 In the following, we explain how a thread spec (i.e., an entry in THREAD_TABLE.scad) is created. First, we will explain the basics of threads and how they are specified in the norms. Then, we will elaborate on how to translate those into threadlib thread specs.
 
-
 ## Thread Basics
 
 As an example, we use British Standard Pipe parallel (BSPP) thread (see drawing below). The black curve shows the parting line between internal and external thread. In an ideal world, both threads are created according to the parting line. For BSP thread it is based on a fundamental triangle with a 55-degree angle rounded to a radius r.
@@ -104,26 +103,24 @@ Of course, it is not ok to introduce arbitrarily large allowances: The norm (BS 
  </tr>
 </table>
 
-
 ## Deriving threadlib Specs
 
 We want to approximate the thread profile by straight-line segments as shown in the sketch in red and blue (internal and external thread, respectively).
 
-It is clear that we have to match the pitch exactly.  Therefore, threadlib's P is equal to the pitch in the norm (for G1/16: 0.907 mm).
+It is clear that we have to match the pitch exactly. Therefore, threadlib's P is equal to the pitch in the norm (for G1/16: 0.907 mm).
 
-Then, we choose the pitch diameter to be in the center of the given tolerance range. For G1/16 this is (7.723 + 0.107/2) mm. 
+Then, we choose the pitch diameter to be in the center of the given tolerance range. For G1/16 this is (7.723 + 0.107/2) mm.
 
-To explain the choice of r_major and r_minor for both external and internal threads simultaneously, we use the terms r_crest and r_valley. r_crest is the major/minor radius (external/internal) and r_valley is the minor/major radius (external/internal). The norm does not give limits for r_valley. But threadlib requires that the thread profile covers *less* than 1 pitch of thread. Therefore, we arbitrarily choose a small but finite width of "valley floor" that leaves ample clearance to the parting line. For r_crest, we to take into account
+To explain the choice of r*major and r_minor for both external and internal threads simultaneously, we use the terms r_crest and r_valley. r_crest is the major/minor radius (external/internal) and r_valley is the minor/major radius (external/internal). The norm does not give limits for r_valley. But threadlib requires that the thread profile covers \_less* than 1 pitch of thread. Therefore, we arbitrarily choose a small but finite width of "valley floor" that leaves ample clearance to the parting line. For r_crest, we to take into account
 
-1) the allowed deviations given in the norm
-2) the rounding
+1. the allowed deviations given in the norm
+2. the rounding
 
 The former is simple: We aim for the center. The latter requires a little math: We want our piecewise linear profile to remain on one side of the (true) BSP profile. Therefore, our crest radius has to be equal to the radius where the straight rising edge of the BSP profile touches the circle of the rounding (see sketch at the top of this page).
 
-
 ## Adding Specs to threadlib
 
-To get the threads into threadlib, we do the following: 
+To get the threads into threadlib, we do the following:
 
 - Tabulate specs as given in norm => design/newthreads.csv
 - Write design/newthreads.awk => translates design/newthreads.csv to tabular threadlib specs (see next step).
@@ -136,7 +133,6 @@ The format of THREAD_TABLE.csv is:
 `DESIGNATOR, P, Rrot, Dsup, dr_0, z0, dr_1, z_1, dr_2, z_2, dr_3, z_3`
 
 The meaning of these values is explained in [Design of Threadlib](DesignOfThreadlib.md).
-
 
 ## Adding Tests
 

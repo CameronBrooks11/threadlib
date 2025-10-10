@@ -2,17 +2,17 @@
         :alt: bolt-in-nut logo
 
 threadlib is a library of standard threads for `OpenSCAD <https://www.openscad.org>`__.
-It is based on Helges excellent
+It is based on Helge's excellent
 `threadprofile.scad <https://github.com/MisterHW/IoP-satellite/tree/master/OpenSCAD%20bottle%20threads>`__
-to create nice threads with lead-in / lead-out tapers. Check out his `article on generating nice threads <https://hackaday.io/page/5252-generating-nice-threads-in-openscad>`__
+to create nice threads with lead-in/lead-out tapers. Check out his `article on generating nice threads <https://hackaday.io/page/5252-generating-nice-threads-in-openscad>`__
 on Hackaday.
 
 In contrast to other thread libraries such as `openscad-threads <http://dkprojects.net/openscad-threads/>`__,
 `yet another thread library <https://www.thingiverse.com/thing:2277141>`__,
 `threads for screws and nuts V1 <https://www.thingiverse.com/thing:3131126>`__,
 and `threading.scad <https://www.thingiverse.com/thing:1659079>`__,
-threadlib does not make you look up diameters and pitches and maybe even
-thread-profiles in tables and norms: It has these tables built in.
+threadlib does not make you look up diameters and pitches, and maybe even
+thread profiles, in tables and norms: it has these tables built in.
 
 Creating a thread is as simple as
 
@@ -32,7 +32,7 @@ Why you may want to use threadlib
 
 - really easy to use
 - creates nice threads
-- configurable higbee arc
+- configurable Higbee arc
 - creates working threads (clearances are left for production tolerances)
 - flexible:
 
@@ -47,11 +47,10 @@ Why you may want to use threadlib
 Installation
 ===========================
 
-Prerequisits:
+Prerequisites:
 
 - `openscad/scad-utils <https://github.com/openscad/scad-utils>`__
 - `list-comprehension <https://github.com/openscad/list-comprehension-demos>`__
-- `threadprofile.scad <https://github.com/MisterHW/IoP-satellite/blob/master/OpenSCAD%20bottle%20threads/thread_profile.scad>`__
   
 Save all of these into your OpenSCAD `library folder <https://en.wikibooks.org/wiki/OpenSCAD_User_Manual/Libraries>`__
 
@@ -86,7 +85,7 @@ To create a bolt (without head) with 5 turns of M4 thread:
 .. image:: imgs/bolt-M4.png
         :alt: Bolt with M4 thread
 
-See these nice lead-in / lead-out tapers? Try a nut (this time using the default
+See these nice lead-in/lead-out tapers? Try a nut (this time using the default
 argument for higbee_arc):
 
 .. code-block:: OpenSCAD
@@ -99,7 +98,7 @@ argument for higbee_arc):
 Note that for a nut you also have to specify an outer diameter. The inner
 diameter is implicitly given by the thread designator ("M12x0.5" in this case). You can set the number of sides for the nut! So you can make hex nuts:
 
-.. code-block:: OpenScad
+.. code-block:: OpenSCAD
 
         nut("M30", turns=4, Douter=46, nut_sides=6); 
 
@@ -223,11 +222,11 @@ Change Log
 ===========================
 
 - 0.5: Royal Microscopical Society's thread (RMS)
-- 0.4: `PCO-1810 <https://www.isbt.com/assets/Threadspecs/pco1810.pdf>`__.
+- 0.4: `PCO-1810 <https://www.isbt.com/assets/Threadspecs/pco1810.pdf>`__,
   tap module. Fixes bug with $fn in straight_thread(). Lists metric
   threads under short designator and full designator.
 - 0.3: Unified Inch Screw Threads (UNC, UNF, UNEF, 4-UN, 6-UN, 8-UN, 12-UN,
-  16-UN, 20-UN, 28-UN, and 32-UN. Fixed problem with PCO-1881-int. Fixed problem
-  with G-ext threads. New build system. 
+  16-UN, 20-UN, 28-UN, and 32-UN). Fixed problem with PCO-1881-int. Fixed problem
+  with G-ext threads. New build system.
 - 0.2: Metric threads, `PCO-1881 <https://www.bevtech.org/assets/Committees/Packaging-Technology/20/3784253-20.pdf>`__
 - 0.1: Initial release supporting `BSP parallel thread <https://www.amesweb.info/Screws/British-Standard-Pipe-Parallel-Thread-BSPP.aspx>`__
