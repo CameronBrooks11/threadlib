@@ -174,7 +174,7 @@ thread("special", turns=15, table=MY_THREAD_TABLE);
 
 Care to share? Safe others from repeating the valuable work you have already
 accomplished and get the fame you deserve: Send in your tried and tested
-threads for addition to threadlib! See [How to contribute](./CONTRIBUTING.md)
+threads for addition to threadlib! See [How to contribute](./docs/CONTRIBUTING.md)
 for help on how to become a contributor.
 
 ## Still reading?
@@ -187,10 +187,10 @@ button is at the top of this website.)
 
 Did you find a bug and would like to report it? Or maybe you've fixed it
 already or want to help fixing it? That's great! Please read
-[CONTRIBUTING](./CONTRIBUTING.md) to learn how to proceed.
+[CONTRIBUTING](./docs/CONTRIBUTING.md) to learn how to proceed.
 
 To help ascertain that contributing to this project is a pleasant experience,
-we have established a [code of conduct](./CODE_OF_CONDUCT.md). You can expect
+we have established a [code of conduct](./docs/CODE_OF_CONDUCT.md). You can expect
 everyone to adhere to it, just make sure you do as well.
 
 ## Change Log
