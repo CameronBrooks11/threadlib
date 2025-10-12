@@ -6,9 +6,9 @@ In the following, we explain how a thread spec (i.e., an entry in THREAD_TABLE.s
 
 As an example, we use British Standard Pipe parallel (BSPP) thread (see drawing below). The black curve shows the parting line between internal and external thread. In an ideal world, both threads are created according to the parting line. For BSP thread it is based on a fundamental triangle with a 55-degree angle rounded to a radius r.
 
-![BSPP thread drawing](imgs/BSPthread.jpg)
+![BSPP thread drawing](./imgs/BSPthread.jpg)
 
-     BSPP thread drawing. Source: Maryland Metrics.
+> BSPP thread drawing. Source: Maryland Metrics.
 
 Reality is a bit more complicated: If one of the threads deviates only a little in the wrong direction, the threads collide. Therefore, the pitch radius r_pitch (radius where distance between falling and rising edges is exactly P/2) of the external thread has to be reduced a little bit (and vice versa for the internal thread). Also, major- and minor radii are adjusted so that the real thread is guaranteed to remain on its own side of the theoretical parting line.
 
@@ -132,10 +132,10 @@ The format of THREAD_TABLE.csv is:
 
 `DESIGNATOR, P, Rrot, Dsup, dr_0, z0, dr_1, z_1, dr_2, z_2, dr_3, z_3`
 
-The meaning of these values is explained in [Design of Threadlib](DesignOfThreadlib.md).
+The meaning of these values is explained in [Design of Threadlib](design-of-threadlib.md).
 
 ## Adding Tests
 
 Furthermore, we should extend tests/test_table.awk to test our newly created threads. The very minimum is to add a test for the thread angles. Perform the tests by running `make test` in the top-level directory or `make` inside the tests subdirectory. If it prints "TESTS SUCCESSFUL" you are probably fine. Note: If you have a thread spec that is not tested at all, the tests will fail, too.
 
-For more information on testing, see [Unit Tests](UnitTests.md).
+For more information on testing, see [Unit Tests](unit-tests.md).

@@ -1,25 +1,27 @@
-# Design of threadlib
+# threadlib Design Architecture
 
-The structure of threadlib is very simple and consists of only two files:
+threadlib has a simple, elegant structure consisting of two main files:
 
-- threadlib.scad
-- THREAD_TABLE.scad
+- **threadlib.scad** - Core functions for generating threads, bolts, and nuts
+- **THREAD_TABLE.scad** - Large dictionary of thread specifications
 
-The former provides the code to generate threads, bolts, and nuts. The latter simply holds a large dictionary (named THREAD_TABLE) providing the thread specs given a thread designator.
+The main file provides the geometry generation code, while THREAD_TABLE holds all the thread specifications indexed by thread designator.
 
-THREAD_TABLE is a vector of vectors called "entries". Every entry has the following format:
+## Thread Table Structure
+
+THREAD_TABLE is a vector of entries, where each entry follows this format:
 
 ```openscad
 [DESIGNATOR, [P, Rrot, Dsup, profile]]
 ```
 
-where
+**Parameters:**
 
-- DESIGNATOR: Name of thread (e.g., "M6x0.5-ext")
-- P: Pitch of the thread
-- Rrot: Radius of rotation used for later "extrusion" of the thread. Rrot is positive for external threads and negative for internal threads
-- Dsup: Recommended diameter of support structure of the thread (i.e., of cylinder for external thread and hole for internal thread)
-- profile: A vector of 2D [delta_r, z] vectors describing the shape of the thread
+- **DESIGNATOR**: Thread name (e.g., "M6x0.5-ext")
+- **P**: Thread pitch  
+- **Rrot**: Rotation radius for thread extrusion (positive for external, negative for internal)
+- **Dsup**: Recommended support structure diameter
+- **profile**: Vector of 2D [delta_r, z] coordinates describing thread shape
 
 Let's look at an example:
 

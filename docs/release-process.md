@@ -1,4 +1,4 @@
-# Release
+# Release Process
 
 - Update Changelog README.rst
 - Update Supported Threads in README.rst
