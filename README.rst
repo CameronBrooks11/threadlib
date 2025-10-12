@@ -1,4 +1,4 @@
-.. image:: imgs/logo.png
+.. image:: docs/imgs/logo.png
         :alt: bolt-in-nut logo
 
 threadlib is a library of standard threads for `OpenSCAD <https://www.openscad.org>`__.
@@ -21,7 +21,7 @@ Creating a thread is as simple as
         use <threadlib/threadlib.scad>
         thread("G1/2-ext", turns=10);
 
-.. image:: imgs/thread-G1o2-ext-10turns.png
+.. image:: docs/imgs/thread-G1o2-ext-10turns.png
         :alt: bolt-in-nut logo
 
 to create a British Standard Pipe parallel external thread. 
@@ -82,7 +82,7 @@ To create a bolt (without head) with 5 turns of M4 thread:
 
         bolt("M4", turns=5, higbee_arc=30);
 
-.. image:: imgs/bolt-M4.png
+.. image:: docs/imgs/bolt-M4.png
         :alt: Bolt with M4 thread
 
 See these nice lead-in/lead-out tapers? Try a nut (this time using the default
@@ -92,7 +92,7 @@ argument for higbee_arc):
 
         nut("M12x0.5", turns=10, Douter=16);
 
-.. image:: imgs/nut-M12x0.5.png
+.. image:: docs/imgs/nut-M12x0.5.png
         :alt: M12x0.5 nut
 
 Note that for a nut you also have to specify an outer diameter. The inner
@@ -111,7 +111,7 @@ threadlib's solution is to provide the tap module:
 
         tap("G1/2", turns=5);
 
-.. image:: imgs/tap-G1o2.png
+.. image:: docs/imgs/tap-G1o2.png
         :alt: G1/2 tap
 
 The tap shown above *is* intended for use like this and has accounted for the
@@ -134,7 +134,7 @@ If you only need the threads alone:
 
         thread("G1/2-ext", turns=5);
 
-.. image:: imgs/thread-G1o2-ext.png
+.. image:: docs/imgs/thread-G1o2-ext.png
         :alt: G1/2 external thread
  
 (Note: You need to specify whether you want internal ("-int") or external
@@ -150,7 +150,7 @@ case, a cylinder (which is what nut(...) uses):
         translate([0, 0, -P / 2])
             cylinder(h=H, d=Dsupport, $fn=120);
 
-.. image:: imgs/flexible.png
+.. image:: docs/imgs/flexible.png
         :alt: G1/2 bolt
 
 Here, we have used the function thread_specs(...) to look up the threads
