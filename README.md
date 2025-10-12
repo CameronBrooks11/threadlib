@@ -1,5 +1,3 @@
-# threadlib
-
 ![threadlib logo](docs/imgs/logo.png)
 
 threadlib is a library of standard threads for [OpenSCAD](https://www.openscad.org).
