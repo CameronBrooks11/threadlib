@@ -29,12 +29,12 @@ translate([30, 30, 0]) {
 }
 
 // Test large thread: GL100
-translate([0, 70, 0]) {
+translate([0, 100, 0]) {
     echo("Testing GL100 external thread...");
     thread("GL100-ext", turns=1.5, higbee_arc=45);
 }
 
-translate([60, 70, 0]) {
+translate([120, 100, 0]) {
     echo("Testing GL100 internal thread...");
     thread("GL100-int", turns=1.5, higbee_arc=45);
 }
@@ -47,5 +47,5 @@ translate([0, -40, 0]) {
 
 translate([25, -40, 0]) {
     echo("Testing GL18 nut...");
-    nut("GL18", turns=3, Douter=25, higbee_arc=45);
+    nut("GL18", turns=3, Douter=25);
 }
