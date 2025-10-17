@@ -6,4 +6,4 @@
 .vscode/
 
 # Build
-design/THREAD_TABLE.csv
+design/build/THREAD_TABLE.csv

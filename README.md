@@ -2,7 +2,7 @@
 
 threadlib is a library of standard threads for [OpenSCAD](https://www.openscad.org).
 It is based on Helge's excellent
-[threadprofile.scad](https://github.com/MisterHW/IoP-satellite/tree/master/OpenSCAD%20bottle%20threads)
+[thread_profile.scad](https://github.com/MisterHW/IoP-satellite/tree/master/OpenSCAD%20bottle%20threads)
 to create nice threads with lead-in/lead-out tapers. Check out his [article on generating nice threads](https://hackaday.io/page/5252-generating-nice-threads-in-openscad)
 on Hackaday.
 
