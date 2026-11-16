@@ -1,3 +1,14 @@
+> [!WARNING]
+> This fork is archived and unmaintained. Use upstream
+> [adrianschlatter/threadlib](https://github.com/adrianschlatter/threadlib)
+> (release 0.5) instead.
+>
+> The fork moves the library files into `src/`, so
+> `include <threadlib/THREAD_TABLE.scad>` and
+> `use <threadlib/thread_profile.scad>` do not resolve against it. It also
+> holds an unfinished DIN 168 knuckle thread (`din168k`) whose profile gap is
+> still wrong.
+
 ![threadlib logo](docs/imgs/logo.png)
 
 threadlib is a library of standard threads for [OpenSCAD](https://www.openscad.org).
